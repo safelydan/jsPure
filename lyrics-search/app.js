@@ -16,17 +16,23 @@ async function showSongs(songsInfo) {
       </li>`
       )
       .join("");
-
-    if (songsInfo.prev || songsInfo.next) {
-      prevAndNextContainer.innerHTML = `
-            ${songsInfo.next ? `<button>Próximas</button>` : ""}
-        `;
-    }
   } catch (error) {
     console.log("erro ao exibir musicas", error);
   }
 }
 
+async function getMoreSongs(urlPrevOrNext) {
+  const song = await fetch(urlPrevOrNext);
+  const songs = await song.json();
+  const songsData = songs?.data;
+  console.log(songsData);
+
+  songsContainer.innerHTML = `
+  <h3 class="artist-searched" >Resultados para: ${term}</h3>
+
+`;
+  showSongs(songsData);
+}
 async function fetchSongs(term) {
   try {
     const song = await fetch(`${apiUrl}/suggest/${term}`);
@@ -38,6 +44,26 @@ async function fetchSongs(term) {
 
   `;
     showSongs(songsData);
+    console.log("aaa", songs.next);
+
+    if (songs.prev || songs.next) {
+      prevAndNextContainer.innerHTML = `
+      ${
+        songs.prev
+          ? `<button class="btn" onClick="getMoreSongs('${songs.prev}')">Anteriores</button>`
+          : ""
+      }
+         '${songs.next}'   ${
+        songs.next
+          ? `<button class="btn" onClick="getMoreSongs('${songs.next}')">Próximas</button>`
+          : ""
+      }
+        `;
+      console.log("aaa", songs.next);
+
+      return;
+    }
+    prevAndNextContainer = "";
   } catch (error) {
     console.log("erro ao buscar musicas", error);
   }
