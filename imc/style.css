@@ -1,79 +1,97 @@
-main{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  .container{
-    display: flex;
-    flex-direction: column;
-    background: rgb(255,198,0);
-    width: 400px;
-    height: 600px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 20px;
-    box-shadow: 0 0 10px black;
-  }
-  
-  .title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    font: bold 2.5rem serif;
-    border-bottom: solid 5px black;
-    margin-bottom: 20px;
-  }
-  
-  .input {
-    display: flex;
-    width: 300px;
-    height: 50px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .input input {
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    border:none;
-    outline: 0;
-    font: bold 1.5rem serif;
-    text-align: center;
-  }
-  
-  .input label {
-    font: bold 1.5rem serif;
-  }
-  
-  button{
-    width: 300px;
-    height: 40px;
-    font: bold 1.2rem serif;
-    background: #000;
-    color: rgb(255,198,0);
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .result{
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    width: 300px;
-    height: 150px;
-    border-radius: 5px;
-    font: italic 1.5rem serif;
-    box-shadow: 0px 0px 10px black;
-    background: #000;
-    color: rgb(255,198,0);
-    padding: 20px;
-    box-sizing: border-box;
-    user-select: none;
-  }
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fundo gradiente */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff; /* Cor branca para o container */
+  width: 400px;
+  height: 600px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font: bold 2.5rem 'Roboto', sans-serif; /* Fonte moderna */
+  border-bottom: solid 4px #2575fc;
+  margin-bottom: 20px;
+  color: #6a11cb; /* Azul arroxeado */
+}
+
+.input {
+  display: flex;
+  width: 300px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input input {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: 0;
+  font: bold 1.5rem 'Roboto', sans-serif;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: 0.3s ease-in-out;
+}
+
+.input input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.5); /* Destaque ao foco */
+}
+
+.input label {
+  font: bold 1.5rem 'Roboto', sans-serif;
+  color: #444; /* Cor suave para o texto */
+}
+
+button {
+  width: 300px;
+  height: 40px;
+  font: bold 1.2rem 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra ao botão */
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inversão de gradiente */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Destaque ao hover */
+}
+
+.result {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  font: italic 1.5rem 'Roboto', sans-serif;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Sombra mais suave */
+  background: #f9f9f9; /* Fundo claro */
+  color: #444; /* Cor do texto */
+  padding: 20px;
+  box-sizing: border-box;
+  user-select: none;
+}
